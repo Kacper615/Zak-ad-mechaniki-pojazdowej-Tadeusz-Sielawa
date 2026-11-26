@@ -138,7 +138,7 @@ body {
     color: var(--gold);
 }
 
-/* Nagłówek główny - elegancka nazwa tekstowa bez symboli */
+/* Nagłówek główny - nieco mniejsza nazwa tekstowa i większe zakładki */
 header {
     background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(8px);
@@ -171,10 +171,10 @@ header.scrolled {
 .brand-wordmark h1 {
     margin: 0;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.55rem;
+    font-size: 1.3rem;
     color: var(--navy-mid);
     font-weight: 700;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.3px;
     line-height: 1.2;
 }
 
@@ -184,15 +184,15 @@ header.scrolled {
 }
 
 .brand-wordmark .subtitle {
-    margin: 3px 0 0 0;
+    margin: 2px 0 0 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     font-weight: 600;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
 }
 
-/* Nawigacja z wysuwanymi zakładkami */
+/* Nawigacja z większymi zakładkami */
 nav ul {
     list-style: none;
     margin: 0;
@@ -200,7 +200,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
 nav ul li {
@@ -210,13 +210,13 @@ nav ul li {
 nav ul li a {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 7px;
     color: var(--navy-dark);
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.98rem;
-    padding: 10px 15px;
-    border-radius: 6px;
+    font-size: 1.08rem;
+    padding: 12px 19px;
+    border-radius: 7px;
     transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
 
@@ -231,7 +231,7 @@ nav ul li a.active {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 275px;
+    min-width: 285px;
     background: var(--bg-white);
     border: 1px solid var(--border-color);
     border-top: 3px solid var(--accent);
@@ -256,9 +256,9 @@ nav ul li a.active {
 .dropdown-menu li a {
     display: block;
     width: 100%;
-    padding: 10px 18px;
+    padding: 11px 18px;
     border-radius: 0;
-    font-size: 0.93rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-main);
     transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
@@ -273,11 +273,11 @@ nav ul li a.active {
 .header-cta {
     background: var(--accent);
     color: #fff !important;
-    padding: 10px 18px;
-    border-radius: 6px;
+    padding: 12px 20px;
+    border-radius: 7px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition: background 0.25s ease, transform 0.2s ease;
     animation: pulseGlow 2.8s infinite;
 }
@@ -287,7 +287,7 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* Sekcja Hero - jasna, z prawdziwym zdjęciem na pierwszym planie */
+/* Sekcja Hero */
 .hero-section {
     background: linear-gradient(135deg, #ffffff 0%, #eaf0f8 100%);
     border-bottom: 1px solid var(--border-color);
@@ -407,14 +407,6 @@ nav ul li a.active {
 
 .hero-image-card:hover img {
     transform: scale(1.04);
-}
-
-.hero-image-caption {
-    padding: 10px 6px 2px 6px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    text-align: center;
-    font-weight: 600;
 }
 
 /* Sekcje główne */
@@ -625,12 +617,11 @@ details.accordion-item[open] summary::after {
     animation: fadeSlideUp 0.3s ease forwards;
 }
 
-/* Galeria zdjęć bez podpisów pod niższymi zdjęciami */
-.gallery-grid {
+/* Galeria 2 prawdziwych zdjęć na stronie głównej */
+.gallery-grid-two {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 22px;
-    margin-top: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
 .gallery-card {
@@ -648,7 +639,7 @@ details.accordion-item[open] summary::after {
 
 .gallery-img-wrap {
     overflow: hidden;
-    height: 245px;
+    height: 300px;
 }
 
 .gallery-img {
@@ -660,7 +651,7 @@ details.accordion-item[open] summary::after {
 }
 
 .gallery-card:hover .gallery-img {
-    transform: scale(1.07);
+    transform: scale(1.06);
 }
 
 /* Sekcja ocen Google */
@@ -762,7 +753,7 @@ details.accordion-item[open] summary::after {
     gap: 12px;
 }
 
-/* Podstrona Oferta - od ogółu do szczegółu */
+/* Podstrona Oferta */
 .spec-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -903,7 +894,8 @@ footer p {
 
 @media (max-width: 860px) {
     .hero-grid,
-    .tech-banner {
+    .tech-banner,
+    .gallery-grid-two {
         grid-template-columns: 1fr;
     }
     .hero-image-card img {
@@ -916,7 +908,7 @@ footer p {
         grid-template-columns: 1fr;
     }
     .brand-wordmark h1 {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
     .card-section {
         padding: 22px 18px;
